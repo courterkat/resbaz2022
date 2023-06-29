@@ -1,0 +1,389 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Body fluid identification},
+  pdfauthor={Courtney Lynch},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Body fluid identification}
+\author{Courtney Lynch}
+\date{2023-06-27}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, interior hidden, frame hidden, breakable, boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\hypertarget{hello}{%
+\subsection{hello}\label{hello}}
+
+\begin{itemize}
+\tightlist
+\item
+  hi
+\item
+  hi
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, coltitle=black, rightrule=.15mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Markdown exercise}, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm, left=2mm, opacityback=0, toprule=.15mm, titlerule=0mm]
+
+\begin{itemize}
+\item
+  Check out
+  \href{https://quarto.org/docs/authoring/markdown-basics.html}{Quarto's
+  markdown guide}
+\item
+  and the
+  \href{https://biostats-r.github.io/biostats/quarto/04-figures-tables.html\#equations}{biostats
+  guide to writing (equations section)}
+\end{itemize}
+
+In the template Introduction section take 3-4 minutes to write:
+
+\begin{itemize}
+\item
+  a sub-heading under the introduction
+\item
+  a list
+\item
+  and an equation (inline or as a block) \(y=mx+c\)
+\item
+  cite one of the articles in in existing \texttt{.bib} file using the
+  \texttt{@} Chamberlin (1897)
+\item
+  remove this callout and render the document and hit the
+  :heavy\_check\_mark: in zoom
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{libraries}{%
+\section*{Libraries}\label{libraries}}
+
+Generally it is good practice to include a list of packages you use up
+front. But you may not need to show them in the output or list them in
+the table of contents. The \texttt{\{.unnumbered\ .unlisted\}} commands
+following the heading remove this section from the table of contents but
+it will remain in the text. Quarto accepts multiple coding languages,
+the following example uses R. I have set up working R code chunks so
+that for this tutorial you do not need to be familiar with R. Here, we
+will experiment with a few code
+\href{https://quarto.org/docs/computations/execution-options.html}{execution
+options}.
+
+If you want to use Python code check out the documentation
+\href{https://quarto.org/docs/computations/python.html\#overview}{here}.
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, coltitle=black, rightrule=.15mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Code block exercise}, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm, left=2mm, opacityback=0, toprule=.15mm, titlerule=0mm]
+
+\begin{itemize}
+\item
+  Check out the
+  \href{https://quarto.org/docs/computations/execution-options.html}{Block
+  options} and edit (and add to) the existing code block options below
+  to:
+\item
+  exclude the results, messages and warnings
+\item
+  exclude the code from the HTML output
+\item
+  render the document and hit the :heavy\_check\_mark: in zoom
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{tabsets}{%
+\section{Tabsets}\label{tabsets}}
+
+\section{Tab 1}
+
+blah blah
+
+\section{Tab 2}
+
+blah
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, coltitle=black, rightrule=.15mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tabset exercise}, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm, left=2mm, opacityback=0, toprule=.15mm, titlerule=0mm]
+
+\begin{itemize}
+\item
+  Check out the
+  \href{https://quarto.org/docs/interactive/layout.html\#tabset-panel}{tabset
+  panel documentation}
+\item
+  Create a tabset with three tabs in the template under the Tabsets
+  heading
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Does not matter what they contain but feel free to blurb something
+    in there
+  \end{itemize}
+\item
+  render the document and hit the :heavy\_check\_mark: in zoom
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{images}{%
+\section{Images}\label{images}}
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, coltitle=black, rightrule=.15mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Images exercise}, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm, left=2mm, opacityback=0, toprule=.15mm, titlerule=0mm]
+
+\begin{itemize}
+\item
+  There is a (royalty free) XKCD comic inside the images directory in
+  the repo. using the syntax described above, insert the image into one
+  of the tabsets you just created.
+\item
+  render the document and hit the :heavy\_check\_mark: in zoom
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{letg-go-git-it}{%
+\subsection{let'g go Git it}\label{letg-go-git-it}}
+
+You're now ready to host your first live link!
+
+\begin{tcolorbox}[enhanced jigsaw, colback=white, arc=.35mm, colframe=quarto-callout-tip-color-frame, bottomrule=.15mm, coltitle=black, rightrule=.15mm, breakable, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{GitHub}, opacitybacktitle=0.6, bottomtitle=1mm, toptitle=1mm, leftrule=.75mm, left=2mm, opacityback=0, toprule=.15mm, titlerule=0mm]
+
+\begin{itemize}
+\item
+  Render your project so that most recent changes are exported
+\item
+  In the source control on the left commit and push your changes
+
+  \begin{itemize}
+  \tightlist
+  \item
+    You can do this however you prefer, commandline, GUI, source
+    control\ldots{}
+  \end{itemize}
+\item
+  Head over to GitHub in your browser and go:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Settings -\textgreater{} GitHub pages -\textgreater{} enable github
+    pages
+  \end{itemize}
+\item
+  By default, your link will be hosted at:
+  https://githubusername.github.io/reponame/pathtodocument.html
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The repo can remain private but anyone who has the link can view it.
+  \end{itemize}
+\item
+  Find your hosted template link and share with the world!
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+References are generated by default so include a final empty heading
+(delete this text) called References or Bibliography, or whatever is
+appropriate.
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-chamberlin1897}{}}%
+Chamberlin, T. C. 1897. {``The {Method} of {Multiple Working
+Hypotheses}.''} \emph{The Journal of Geology} 5: 837--48.
+
+\end{CSLReferences}
+
+
+
+\end{document}
